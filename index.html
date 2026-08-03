@@ -1,38 +1,201 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Toolkit TI - Nodus Tech</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toolkit de Suporte Técnico - NodusTech</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #111827; color: #f3f4f6; padding: 20px; }
-        h1 { color: #3b82f6; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px; }
-        .card { background: #1f2937; padding: 20px; border-radius: 8px; border-left: 4px solid #2563eb; }
-        .card h3 { margin-top: 0; }
-        a { display: inline-block; background: #2563eb; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; margin-top: 10px; }
-        a:hover { background: #1d4ed8; }
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --border: #334155;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        header h1 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        header p {
+            color: var(--text-muted);
+        }
+        .category {
+            margin-bottom: 30px;
+        }
+        .category h2 {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 8px;
+            font-size: 1.25rem;
+            color: #60a5fa;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+        }
+        .card h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+        .btn-alt {
+            background-color: #334155;
+        }
+        .btn-alt:hover {
+            background-color: #475569;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
     </style>
 </head>
 <body>
-    <h1>Toolkit de Suporte Técnico</h1>
-    <p>Bem-vindo ao seu repositório portátil, <b>{username}</b>. Selecione a ferramenta abaixo:</p>
-    
-    <div class="grid">
-        <div class="card">
-            <h3>Acesso Remoto</h3>
-            <p>Baixe o AnyDesk ou RustDesk atualizados.</p>
-            <a href="https://anydesk.com" target="_blank">Baixar AnyDesk</a>
-        </div>
-        <div class="card">
-            <h3>Chamado Nodus Tech</h3>
-            <p>Nosso aplicativo proprietário de suporte.</p>
-            <a href="https://pub-9833e4783a4c4c12a9c5118df046de09.r2.dev/Instalador_Suporte_NodusTech_v1.0.0.exe" target="_blank">Baixar Executável (Windows)</a>
-        </div>
-        <div class="card">
-            <h3>Utilitários de Rede</h3>
-            <p>Ferramentas de diagnóstico e scripts úteis.</p>
-            <a href="#" target="_blank">Acessar Scripts</a>
+
+<div class="container">
+    <header>
+        <h1>Toolkit de Suporte Técnico</h1>
+        <p>Bem-vindo ao seu painel centralizado, {username}.</p>
+    </header>
+
+    <!-- SUPORTE E CHAMADOS -->
+    <div class="category">
+        <h2>Atendimento e Suporte</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Chamado NodusTech</h3>
+                <p>Nosso aplicativo proprietário de suporte integrado e agilizado[cite: 1].</p>
+                <a href="https://pub-9833e4783a4c4c12a9c5118df046de09.r2.dev/Instalador_Suporte_NodusTech_v1.0.0.exe" class="btn" target="_blank">Baixar Executável (Windows)[cite: 1]</a>
+            </div>
+            <div class="card">
+                <h3>Acesso Remoto</h3>
+                <p>Ferramentas essenciais para conexão rápida com os clientes[cite: 1].</p>
+                <a href="https://anydesk.com" class="btn btn-alt" target="_blank">AnyDesk[cite: 1]</a>
+                <a href="https://rustdesk.com" class="btn btn-alt" target="_blank" style="margin-top: 8px;">RustDesk</a>
+            </div>
         </div>
     </div>
+
+    <!-- DIAGNÓSTICO E HARDWARE -->
+    <div class="category">
+        <h2>Diagnóstico & Hardware</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>CPU-Z</h3>
+                <p>Informações detalhadas sobre processador, placa-mãe e memórias.</p>
+                <a href="https://www.cpuid.com/softwares/cpu-z.html" class="btn btn-alt" target="_blank">Baixar CPU-Z</a>
+            </div>
+            <div class="card">
+                <h3>CrystalDiskInfo</h3>
+                <p>Verificação de saúde S.M.A.R.T. e vida útil de HDs e SSDs.</p>
+                <a href="https://crystalmark.info/" class="btn btn-alt" target="_blank">Baixar CrystalDiskInfo</a>
+            </div>
+            <div class="card">
+                <h3>HWMonitor</h3>
+                <p>Monitoramento de temperaturas, voltagens e velocidades de fans.</p>
+                <a href="https://www.cpuid.com/softwares/hwmonitor.html" class="btn btn-alt" target="_blank">Baixar HWMonitor</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- UTILITÁRIOS E MANUTENÇÃO -->
+    <div class="category">
+        <h2>Utilitários & Manutenção</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Ventoy</h3>
+                <p>Criação de pendrive bootável multissistema arrastando as ISOs.</p>
+                <a href="https://www.ventoy.net/" class="btn btn-alt" target="_blank">Baixar Ventoy</a>
+            </div>
+            <div class="card">
+                <h3>Geek Uninstaller</h3>
+                <p>Desinstalação limpa de softwares e remoção de registros órfãos.</p>
+                <a href="https://geekuninstaller.com/" class="btn btn-alt" target="_blank">Baixar Geek Uninstaller</a>
+            </div>
+            <div class="card">
+                <h3>7-Zip</h3>
+                <p>Compactador e descompactador de arquivos leve e eficiente.</p>
+                <a href="https://www.7-zip.org/" class="btn btn-alt" target="_blank">Baixar 7-Zip</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEGURANÇA E REMOÇÃO -->
+    <div class="category">
+        <h2>Segurança & Antivírus</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Malwarebytes</h3>
+                <p>Varredura profunda e remoção de malwares, adwares e trojans.</p>
+                <a href="https://www.malwarebytes.com/" class="btn btn-alt" target="_blank">Baixar Malwarebytes</a>
+            </div>
+            <div class="card">
+                <h3>AdwCleaner</h3>
+                <p>Limpeza rápida de sequestradores de navegador e barras indesejadas.</p>
+                <a href="https://www.malwarebytes.com/adwcleaner" class="btn btn-alt" target="_blank">Baixar AdwCleaner</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>NodusTech - Soluções em Tecnologia da Informação</p>
+    </footer>
+</div>
+
 </body>
 </html>
