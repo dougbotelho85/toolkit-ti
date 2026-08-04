@@ -2,8 +2,13 @@ import secrets
 from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
+
+# Configura a pasta 'static' para servir arquivos públicos (downloads, etc)
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
 security = HTTPBasic()
 
 USUARIO_MESTRE = "admin"
